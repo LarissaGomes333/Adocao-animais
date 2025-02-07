@@ -4,55 +4,55 @@
     --dark-red: #C32D39;
     --bege: #FFF5E1;
     --grey: #F5F5F5;
-  }
+}
 
-*{
+* {
     margin: 0;
     left: 0;
     padding: 0;
 }
 
-.flex{
+.flex {
     display: flex;
     flex-direction: row;
 }
 
-header{
+header {
     background-color: var(--main-blue);
     color: white;
     height: 80px;
     align-content: center;
 }
 
-header .flex{
+header .flex {
     justify-content: space-around;
     align-items: center;
 }
 
-.header-list-itens{
+.header-list-itens {
     width: 30%;
     font-size: 18px;
     text-transform: uppercase;
 }
 
-.first-section{
+.first-section {
     justify-content: center;
     margin: 3% 10%;
     gap: 5%;
 }
 
-.first-section-content{
+.first-section-content {
     align-content: center;
     text-align: center;
     margin: 0 5%;
 }
 
-.first-section-content p{
+.first-section-content p {
     margin: 7% 0;
     font-size: 20px;
 }
 
-.button{
+.button {
     background-color: var(--light-red);
     color: white;
     width: 30%;
@@ -60,6 +60,84 @@ header .flex{
     border: none;
 }
 
-.button:hover{
+.button:hover {
     background-color: var(--dark-red);
+}
+
+/* Support */
+
+.support{
+    background-color: var(--bege);
+    padding: 4% 3% 5% 3%;
+}
+
+.support h2{
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.support .flex{
+    justify-content: space-around;
+}
+
+.support-box{
+    background-color: #ffffff;
+    border: 1px solid #E0E0E0;
+    height: 300px;
+    width: 250px;
+    text-align: center;
+    padding: 3%;
+    align-content: center;
+}
+
+.support-box h4{
+    margin-top: 3%;
+}
+
+.support-box p{
+    margin-top: 8%;
+    font-size: 18px;
+}
+
+
+
+
+footer {
+    background-color: var(--main-blue);
+    color: white;
+    padding: 2% 3%;
+}
+
+.footer-content {
+    justify-content: space-around;
+}
+
+
+.footer-list {
+    width: 40%;
+    justify-content: space-between;
+    line-height: 26px;
+    font-size: 16px;
+    margin-bottom: 1%;
+}
+
+.footer-list h3{
+    font-size: 18px;
+    margin-bottom: 5%;
+}
+
+.footer-item{
+    gap: 10px;
+}
+
+.footer-item .flex{
+    justify-content: center;
+}
+
+.footer-rights {
+    padding: 1% 0 0 0;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    border-top: 3px solid #E0E0E0;
 }
