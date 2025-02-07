@@ -1,0 +1,36 @@
+:root {
+    --main-blue: #0C1844;
+    --light-red: #E63946;
+    --dark-red: #C32D39;
+    --bege: #FFF5E1;
+    --grey: #F5F5F5;
+  }
+
+*{
+    margin: 0;
+    left: 0;
+    padding: 0;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+
+header{
+    background-color: var(--main-blue);
+    color: white;
+    height: 80px;
+    align-content: center;
+}
+
+header .flex{
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-list-itens{
+    width: 30%;
+    font-size: 18px;
+    text-transform: uppercase;
+}
