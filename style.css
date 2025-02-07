@@ -34,3 +34,32 @@ header .flex{
     font-size: 18px;
     text-transform: uppercase;
 }
+
+.first-section{
+    justify-content: center;
+    margin: 3% 10%;
+    gap: 5%;
+}
+
+.first-section-content{
+    align-content: center;
+    text-align: center;
+    margin: 0 5%;
+}
+
+.first-section-content p{
+    margin: 7% 0;
+    font-size: 20px;
+}
+
+.button{
+    background-color: var(--light-red);
+    color: white;
+    width: 30%;
+    height: 50px;
+    border: none;
+}
+
+.button:hover{
+    background-color: var(--dark-red);
+}
