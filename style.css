@@ -12,6 +12,10 @@
     padding: 0;
 }
 
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .flex {
     display: flex;
     flex-direction: row;
@@ -99,6 +103,20 @@ header .flex {
     font-size: 18px;
 }
 
+.about-us{
+    text-align: center;
+    padding: 5% 5%;
+    background-color: var(--grey);
+}
+
+.about-us-image {
+    justify-content: space-around;
+    margin: 5% 0;
+}
+
+.about-us-description{
+    font-size: 18px;
+}
 
 
 
