@@ -12,8 +12,9 @@
     padding: 0;
 }
 
-body{
+body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10%;
 }
 
 .flex {
@@ -21,11 +22,21 @@ body{
     flex-direction: row;
 }
 
+/* HEADER */
+
 header {
     background-color: var(--main-blue);
     color: white;
     height: 80px;
     align-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.menu-checkbox,
+.menu-icon {
+    display: none;
 }
 
 header .flex {
@@ -38,6 +49,8 @@ header .flex {
     font-size: 18px;
     text-transform: uppercase;
 }
+
+/* FIRST SECTION */
 
 .first-section {
     justify-content: center;
@@ -62,6 +75,7 @@ header .flex {
     width: 30%;
     height: 50px;
     border: none;
+    font-size: 18px;
 }
 
 .button:hover {
@@ -70,21 +84,21 @@ header .flex {
 
 /* Support */
 
-.support{
+.support {
     background-color: var(--bege);
     padding: 4% 3% 5% 3%;
 }
 
-.support h2{
+.support h2 {
     text-align: center;
     margin-bottom: 3%;
 }
 
-.support .flex{
+.support .flex {
     justify-content: space-around;
 }
 
-.support-box{
+.support-box {
     background-color: #ffffff;
     border: 1px solid #E0E0E0;
     height: 300px;
@@ -94,18 +108,20 @@ header .flex {
     align-content: center;
 }
 
-.support-box h4{
+.support-box h4 {
     margin-top: 3%;
 }
 
-.support-box p{
+.support-box p {
     margin-top: 8%;
     font-size: 18px;
 }
 
-.about-us{
+/* ABOUT US */
+
+.about-us {
     text-align: center;
-    padding:5%;
+    padding: 5%;
     background-color: var(--grey);
 }
 
@@ -114,71 +130,72 @@ header .flex {
     margin: 5% 0;
 }
 
-.about-us-description{
+.about-us-description {
     font-size: 18px;
 }
 
+/* JOIN */
 
-.join{
-    background: rgb(255,245,225);
-    background: linear-gradient(90deg, rgba(255,245,225,1) 0%, rgba(255,255,255,1) 100%);
+.join {
+    background: rgb(255, 245, 225);
+    background: linear-gradient(90deg, rgba(255, 245, 225, 1) 0%, rgba(255, 255, 255, 1) 100%);
     justify-content: center;
     padding: 5%;
 }
 
-.join-content{
+.join-content {
     text-align: center;
     align-content: center;
     width: 50%;
 }
 
-.join-content-text{
+.join-content-text {
     padding-bottom: 10%;
     font-size: 20px;
 }
 
-.join .button{
+.join .button {
     font-size: 18px;
     width: 50%;
     height: 70px;
 }
 
-.join img{
+.join img {
     margin-left: 5%;
 }
 
 
-
+/* FOOTER */
 
 footer {
     background-color: var(--main-blue);
     color: white;
-    padding: 2% 3%;
+    padding: 3% 3% 2% 3%;
 }
 
 .footer-content {
     justify-content: space-around;
+    margin-bottom: 1%;
 }
 
-
 .footer-list {
-    width: 50%;
+    width: 55%;
     justify-content: space-between;
     line-height: 26px;
     font-size: 16px;
     margin-bottom: 1%;
 }
 
-.footer-list h3{
+.footer-list h3 {
     font-size: 18px;
     margin-bottom: 5%;
 }
 
-.footer-item{
-    gap: 10px;
+.footer-item {
+    gap: 20px;
 }
 
-.footer-item .flex{
+.footer-item .flex {
     justify-content: space-around;
 }
 
@@ -188,4 +205,271 @@ footer {
     text-align: center;
     font-size: 16px;
     border-top: 3px solid #E0E0E0;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+   .first-section button{
+    width: 70%;
+   }
+
+
+
+   /* FOOTER */
+   
+    .footer-content {
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: baseline;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .footer-list {
+        margin-top: 2%;
+        justify-content: space-around;
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    /* HEADER */
+    .menu-checkbox {
+        display: none;
+    }
+
+    .menu-icon {
+        display: initial;
+        font-size: 30px;
+        background: none;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+    }
+
+    /* Sidebar (menu lateral) */
+    .header-list-itens {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 400px;
+        background: var(--main-blue);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        transition: left 0.3s ease;
+        padding-top: 60px;
+        /* Espaço do topo */
+    }
+
+
+    /* Mostrar a sidebar quando o checkbox for checado */
+    .menu-checkbox:checked~.header-content .header-list-itens {
+        left: 0;
+    }
+
+    /* Fechar automaticamente a sidebar quando rolar a página */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Quando o body for rolado (não há rolagem horizontal), a sidebar volta para o estado escondido */
+    body:focus-within .header-list-itens {
+        left: -250px;
+    }
+
+
+    /* Estilos dos itens do menu */
+    .header-list-itens p {
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* FIRST SECTION */
+    .first-section {
+        justify-content: center;
+        flex-direction: column;
+        margin: 3% 5%;
+    }
+
+    .first-section img {
+        height: 500px;
+        width: auto;
+    }
+
+    .first-section button,
+    .join button {
+        width: 100%;
+        height: 60px;
+    }
+
+    /* SUPPORT */
+    .support .flex {
+        column-gap: 1px;
+    }
+
+    /* ABOUT US */
+    .about-us img {
+        width: auto;
+        height: 130px;
+    }
+
+    /* JOIN  */
+
+    .join {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .join img {
+        width: auto;
+        height: 300px;
+        margin: 0 8% 0 0;
+    }
+
+    .join-content {
+        width: 100%;
+    }
+
+    /* FOOTER */
+    .footer-content {
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: baseline;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .footer-list {
+        margin-top: 2%;
+        justify-content: space-around;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* HEADER */
+    .menu-checkbox {
+        display: none;
+    }
+
+    .menu-icon {
+        display: initial;
+        font-size: 30px;
+        background: none;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+    }
+
+    /* Sidebar (menu lateral) */
+    .header-list-itens {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 400px;
+        background: var(--main-blue);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        transition: left 0.3s ease;
+        padding-top: 60px;
+        /* Espaço do topo */
+    }
+
+
+    /* Mostrar a sidebar quando o checkbox for checado */
+    .menu-checkbox:checked~.header-content .header-list-itens {
+        left: 0;
+    }
+
+    /* Fechar automaticamente a sidebar quando rolar a página */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Quando o body for rolado (não há rolagem horizontal), a sidebar volta para o estado escondido */
+    body:focus-within .header-list-itens {
+        left: -250px;
+    }
+
+
+    /* Estilos dos itens do menu */
+    .header-list-itens p {
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* FIRST SECTION */
+    .first-section {
+        justify-content: center;
+        flex-direction: column;
+        margin: 3% 5%;
+    }
+
+    .first-section img {
+        height: 500px;
+        width: auto;
+    }
+
+    .first-section button,
+    .join button {
+        width: 100%;
+        height: 60px;
+    }
+
+    /* SUPPORT */
+    .support .flex {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    /* ABOUT US */
+    .about-us img {
+        width: auto;
+        height: 130px;
+    }
+
+    /* JOIN  */
+
+    .join {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .join img {
+        width: auto;
+        height: 300px;
+        margin: 0 8% 0 0;
+    }
+
+    .join-content {
+        width: 100%;
+    }
+
+    /* FOOTER */
+    .footer-content,
+    .footer-list {
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2%;
+    }
+
 }
